@@ -26,10 +26,18 @@ const getEntry = async (req, res) => {
   
 // POST a new entry
 const createEntry = async (req, res) => {
-const {location, flow, battery, volume} = req.body
+const {
+    name,
+    latitude,
+    longitude,
+    flow,
+    volume,
+    battery,
+    current
+} = req.body
 
 try {
-    const entry = await Entry.create({location, flow, battery, volume})
+    const entry = await Entry.create({name, latitude, longitude, flow, volume, battery, current})
     res.status(200).json(entry)
 } catch (error) {
     res.status(400).json({error: error.message})

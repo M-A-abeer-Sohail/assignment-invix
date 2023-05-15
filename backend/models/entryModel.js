@@ -3,7 +3,15 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const EntrySchema = new Schema({
-  location: {
+  name: {
+    type: String,
+    required: true
+  },
+  latitude:{
+    type: String,
+    required: true
+  },
+  longitude:{
     type: String,
     required: true
   },
@@ -11,11 +19,15 @@ const EntrySchema = new Schema({
     type: Number,
     required: true
   },
+  volume: {
+    type: Number,
+    required: true
+  },
   battery: {
     type: Number,
     required: true
   },
-  volume: {
+  current: {
     type: Number,
     required: true
   }

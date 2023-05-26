@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchEntries = async () => {
-      const response = await fetch("/api/entries")
+      const response = await fetch("/api/entries") // using proxy in package.json to bypass cross origin error
       const json = await response.json()
 
       if (response.ok) {
